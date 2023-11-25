@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.home {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-left {
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5vw;
+}
+
+.rules {
+    border-radius: 5%;
+    margin: 2vw;
+}
+
+.rules h5 {
+    font-size: 22px;
+    padding: 7px;
+}
+
+.home-left .button-container {
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-left h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 7px;
+}
+
+.home-left button, .credits .button-container button {
+    height: 8vh;
+    width: 8vw;
+    margin: 7px;
+    font-size: 18px;
+}
+
+.tiles {
+   margin-top: 30px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.col {
+    height: 7.5vh;
+    width: 7.5vh;
+    border-radius: 4%;
+    border: 2px solid indigo;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+}
+
+.keyboard {
+    margin: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 66.66vw;
+}
+
+.keybtn {
+    width: 5.5vw; 
+    height: 6vh;
+    margin: 7px;
+    border: 1px solid lightblue;
+    cursor: pointer;
+}
+
+.credits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.credits h2 {
+    margin: 3px;
+}
+
+.credits .button-container {
+    width: 28vw;
+    margin: 10px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

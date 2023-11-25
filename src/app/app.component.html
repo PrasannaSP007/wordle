@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="home" *ngIf="!isStarted">
+    <div class="home-left">
+      <h1 align="center">WORDLE</h1>
+      <div class="button-container">
+        <button class="btn btn-primary" (click)="togglerules()">{{ rules }} </button>
+        <button class="btn btn-success" (click)="start()">Start Game</button>
+      </div>
+    </div>
+    <div class="rules" *ngIf="rules == 'Hide Rules'">
+        <h5>Player should guess a 5-letter English word within 6 trials.</h5>
+        <h5>After each trial, each letter of the entered word will be highlighted with a color.</h5>
+        <h5>&nbsp;✔ The color '<span style="color:green;">green</span>' indicates that the letter is present in the word and is in the correct position.</h5>
+        <h5>&nbsp;✔ The color '<span style="color:yellow;">yellow</span>' indicates that the letter is present in the word but not in the correct position.</h5>
+        <h5>&nbsp;✔ The color '<span style="color:gray;">gray</span>' indicates that the letter is not present in the word.</h5>
+    </div>
+  </div>
+  <div class="tiles" *ngIf="isStarted">
+    <div class="row" *ngFor="let item of box">
+      <div class="col" [ngStyle]="{backgroundColor:inneritem.color, color: inneritem.color=='gray'||inneritem.color=='green' ? 'white' : 'black'}" *ngFor="let inneritem of item">
+        <div>{{ inneritem.key }}</div>
+      </div>      
+    </div>
+  </div>
+  <div class="keyboard" *ngIf="isStarted && !(success||failure)">
+    <ng-container class="key-cont"*ngFor="let k of keyboard">
+      <button class="keybtn btn-primary" (click)="entervalue(k.key)">{{ k.key }}</button>
+    </ng-container>
+  </div>
+  <div class="credits" *ngIf="success||failure">
+    <h2 *ngIf="!failure">Congratulations! You have Won!!</h2>
+    <h2 *ngIf="failure">Oops! You didn't get it right!</h2>
+    <h2 *ngIf="failure">The word was '{{ word }}'</h2>
+    <div class="button-container">
+      <button class="btn btn-primary" (click)="reset()">Main Menu</button>
+      <button class="btn btn-warning" (click)="start()">Play Again</button>
+    </div>
+  </div>
+</div>
